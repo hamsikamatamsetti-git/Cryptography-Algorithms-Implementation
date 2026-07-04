@@ -22,6 +22,21 @@ class SHAHasher:
     def sha1(text):
         return hashlib.sha1(text.encode()).hexdigest()
 
+    @staticmethod
+    def file_sha256(filename):
+        sha = hashlib.sha256()
+
+        with open(filename, "rb") as file:
+            while True:
+                chunk = file.read(4096)
+
+                if not chunk:
+                    break
+
+                sha.update(chunk)
+
+        return sha.hexdigest()
+
 
 def demo():
     print("=" * 50)

@@ -11,7 +11,7 @@ class AESCipher:
 
     def __init__(self, key=None):
         if key is None:
-            self.key = get_random_bytes(32)  # 32 bytes = 256 bits
+            self.key = get_random_bytes(32)
         else:
             self.key = key
 
@@ -48,6 +48,36 @@ class AESCipher:
         )
 
         return decrypted.decode("utf-8")
+
+    def encrypt_file(self, input_file, output_file):
+        with open(input_file, "rb") as file:
+            data = file.read()
+
+        cipher = AES.new(self.key, AES.MODE_CBC)
+
+        encrypted = cipher.encrypt(
+            pad(data, AES.block_size)
+        )
+
+        with open(output_file, "wb") as file:
+            file.write(cipher.iv + encrypted)
+
+    def decrypt_file(self, input_file, output_file):
+        with open(input_file, "rb") as file:
+            data = file.read()
+
+        iv = data[:16]
+        ciphertext = data[16:]
+
+        cipher = AES.new(self.key, AES.MODE_CBC, iv)
+
+        decrypted = unpad(
+            cipher.decrypt(ciphertext),
+            AES.block_size
+        )
+
+        with open(output_file, "wb") as file:
+            file.write(decrypted)
 
 
 def generate_key():

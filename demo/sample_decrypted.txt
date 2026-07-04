@@ -1,0 +1,3 @@
+This is a sample file for AES encryption and SHA hashing.
+
+Cryptography protects confidentiality, integrity, and authenticity.
