@@ -1,4 +1,12 @@
 venv/
 __pycache__/
 *.pyc
-keys/
+*.pyo
+
+keys/*.pem
+keys/*.bin
+
+demo/*.enc
+demo/*_decrypted.txt
+
+.vscode/
