@@ -1,28 +1,41 @@
 # 🔐 Cryptography Algorithms Implementation
 
-A Python-based cryptography project that demonstrates the implementation of commonly used cryptographic algorithms including **AES**, **RSA**, and **SHA**. This project provides a simple command-line interface for encryption, decryption, hashing, and file integrity verification.
+A Python-based cryptography project that demonstrates the implementation of popular cryptographic algorithms including **AES-256**, **RSA-2048**, and **SHA Hashing**. This project provides a simple command-line interface (CLI) for encryption, decryption, hashing, secure key generation, and file integrity verification.
 
 ---
 
-## 📌 Features
+## 📌 Project Overview
 
-* AES-256 Encryption and Decryption
-* RSA-2048 Public Key Encryption
-* SHA Hashing (MD5, SHA-1, SHA-256, SHA-512)
-* File Encryption using AES
-* File Integrity Verification using SHA-256
-* Random AES Key Generation
-* RSA Public and Private Key Generation
-* Interactive Command-Line Interface (CLI)
+Cryptography is the foundation of modern cybersecurity. This project implements three widely used cryptographic techniques:
+
+- **AES-256** for symmetric encryption
+- **RSA-2048** for asymmetric encryption
+- **SHA** for secure hashing and integrity verification
+
+The project is designed to help students and beginners understand how these algorithms work through practical implementation in Python.
 
 ---
 
-## 🛠️ Technologies Used
+## ✨ Features
 
-* Python 3.x
-* PyCryptodome
-* hashlib
-* Git & GitHub
+- 🔐 AES-256 Encryption & Decryption
+- 🔑 RSA-2048 Public Key Encryption & Decryption
+- 🔒 SHA Hashing (MD5, SHA-1, SHA-256, SHA-512)
+- 📄 File Encryption using AES
+- 📁 File Integrity Verification using SHA-256
+- 🔑 Random AES Key Generation
+- 🔑 RSA Public & Private Key Generation
+- 💻 Interactive Command-Line Interface (CLI)
+
+---
+
+## 🛠 Technologies Used
+
+- Python 3.x
+- PyCryptodome
+- hashlib
+- Git
+- GitHub
 
 ---
 
@@ -31,83 +44,106 @@ A Python-based cryptography project that demonstrates the implementation of comm
 ```text
 Cryptography-Algorithms-Implementation/
 │
-├── main.py
-├── README.md
-├── requirements.txt
-├── LICENSE
-├── .gitignore
-│
 ├── demo/
 │   ├── sample.txt
 │   ├── sample.enc
 │   └── sample_decrypted.txt
 │
-├── keys/
-│   ├── aes_key.bin
-│   ├── private.pem
-│   └── public.pem
+├── docs/
 │
-├── screenshots/## 📷 Screenshots
-
-### Main Menu
-
-![Main Menu](screenshots/01_main_menu.png)
-
-### AES Encryption
-
-![AES Encryption](screenshots/02_aes_demo.png)
-
-### RSA Encryption
-
-![RSA Encryption](screenshots/03_rsa_demo.png)
-
-### SHA Hashing
-
-![SHA Hashing](screenshots/04_sha_demo.png)
+├── keys/
+│
+├── screenshots/
+│   ├── 01_main_menu.png
+│   ├── 02_aes_demo.png
+│   ├── 03_rsa_demo.png
+│   └── 04_sha_demo.png
 │
 ├── src/
 │   ├── aes/
+│   │   ├── __init__.py
 │   │   └── aes_encrypt.py
+│   │
 │   ├── rsa/
+│   │   ├── __init__.py
 │   │   └── rsa_encrypt.py
+│   │
 │   └── sha/
+│       ├── __init__.py
 │       └── sha_hash.py
 │
+├── .gitignore
+├── LICENSE
+├── main.py
+├── README.md
+├── requirements.txt
 ├── test_file.py
 └── test_hash.py
 ```
 
 ---
 
-## ⚙️ Installation
+# 📷 Screenshots
 
-Clone the repository:
+## 🏠 Main Menu
+
+![Main Menu](screenshots/01_main_menu.png)
+
+---
+
+## 🔐 AES Encryption
+
+![AES Encryption](screenshots/02_aes_demo.png)
+
+---
+
+## 🔑 RSA Encryption
+
+![RSA Encryption](screenshots/03_rsa_demo.png)
+
+---
+
+## 🔒 SHA Hashing
+
+![SHA Hashing](screenshots/04_sha_demo.png)
+
+---
+
+## ⚙ Installation
+
+### Clone the Repository
 
 ```bash
-git clone https://github.com/<hamsikamatamsetti-git>/Cryptography-Algorithms-Implementation.git
+git clone https://github.com/hamsikamatamsetti-git/Cryptography-Algorithms-Implementation.git
 ```
 
-Go to the project folder:
+### Navigate to Project
 
 ```bash
 cd Cryptography-Algorithms-Implementation
 ```
 
-Create a virtual environment:
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the virtual environment:
+### Activate Virtual Environment
 
-### Windows
+#### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Install dependencies:
+#### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -115,9 +151,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the Project
-
-Run the main application:
+## ▶ Running the Project
 
 ```bash
 python main.py
@@ -129,28 +163,29 @@ python main.py
 
 ### AES-256
 
-* Symmetric encryption
-* CBC mode
-* PKCS7 padding
-* Random IV generation
+- Symmetric Encryption
+- CBC Mode
+- PKCS7 Padding
+- Random IV Generation
 
 ### RSA-2048
 
-* Public key encryption
-* OAEP padding
-* Public/Private key generation
+- Public Key Encryption
+- Private Key Decryption
+- OAEP Padding
+- Secure Key Pair Generation
 
-### SHA
+### SHA Hashing
 
-* MD5
-* SHA-1
-* SHA-256
-* SHA-512
-* File SHA-256 hashing
+- MD5
+- SHA-1
+- SHA-256
+- SHA-512
+- File SHA-256 Hash Verification
 
 ---
 
-## 📷 Sample Output
+## 💻 Sample Output
 
 ```text
 ===========================================
@@ -161,30 +196,34 @@ Cryptography Algorithms Implementation
 2. RSA Encryption
 3. SHA Hashing
 4. Exit
+
+Choose Option:
 ```
 
 ---
 
 ## 📚 Learning Outcomes
 
-* Cryptography fundamentals
-* Symmetric and asymmetric encryption
-* Hashing algorithms
-* File encryption
-* Secure key management
-* Python package organization
-* Git and GitHub workflow
+- Cryptography Fundamentals
+- Symmetric Encryption
+- Asymmetric Encryption
+- Secure Hash Functions
+- File Encryption
+- Secure Key Management
+- Python Package Development
+- Git & GitHub Workflow
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Future Enhancements
 
-* AES-GCM authenticated encryption
-* Digital signatures using RSA
-* Hybrid encryption (AES + RSA)
-* Graphical User Interface (GUI)
-* Secure password manager
-* File integrity checker for directories
+- AES-GCM Authenticated Encryption
+- RSA Digital Signatures
+- Hybrid Encryption (AES + RSA)
+- GUI using Tkinter
+- Secure Password Manager
+- Folder Integrity Checker
+- File Encryption with Drag & Drop
 
 ---
 
@@ -192,10 +231,20 @@ Cryptography Algorithms Implementation
 
 **Hamsika Matamsetti**
 
-Cybersecurity and Python Enthusiast
-GitHub: https://github.com/hamsikamatamsetti-git
+Cybersecurity Enthusiast | Python Developer
+
+GitHub:
+https://github.com/hamsikamatamsetti-git
+
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
